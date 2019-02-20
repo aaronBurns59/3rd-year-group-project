@@ -13,8 +13,8 @@ var Schema = mongoose.Schema;
 //A schema used for handling data with the stock model
 var stockSchema = new Schema
 ({
-    price:number,
-    size:number,
+    price:Number,
+    size:Number,
     colour:String,
     brand:String,
     material:String,
