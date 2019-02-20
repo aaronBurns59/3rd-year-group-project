@@ -26,3 +26,20 @@ var StockModel = mongoose.model('stock', stockSchema);
 //configuring express to use body-parser as middle-ware. 
 app.use(bodyParser.urlencoded({ extended: false })); 
 app.use(bodyParser.json());
+
+//sets what http methods the user is allowed to access
+app.use(function(req,res,next)
+{
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS");
+    res.header("Access-Control-Allow-Header", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
+var server = app.listen(8081, function()
+{
+    var host = server.address().address
+    var port = server.address().port
+
+    console.log("Listening at http://%s:%s", host, port)
+})
