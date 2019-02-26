@@ -36,10 +36,19 @@ app.use(function(req,res,next)
     next();
 });
 
+//Read function that gets documents from the store DB => stock collection 
+app.get('/api/store', function(req, res)
+{
+    StockModel.find(function(err, stock)
+    {
+        res.json(stock);
+    });
+})
+
+//Server connection code
 var server = app.listen(8081, function()
 {
     var host = server.address().address
     var port = server.address().port
-
     console.log("Listening at http://%s:%s", host, port)
 })
