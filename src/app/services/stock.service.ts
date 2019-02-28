@@ -10,10 +10,12 @@ export class StockService
 {
   constructor(private http: HttpClient) {}
 
+  private stockList : Stock[] = [];
+  
   //goes to the DB on mlab, gets and return the url
   //of the collection store
   getStockData():Observable<any>
   {
     return this.http.get("http://localhost:8081/api/store");
   }//getStock
-}
+}//StockService
