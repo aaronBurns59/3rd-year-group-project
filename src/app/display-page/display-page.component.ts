@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StockService } from '../services/stock.service';
+import { Observable } from 'rxjs';
 import { Stock } from '../stock';
-
 @Component({
   selector: 'app-display-page',
   templateUrl: './display-page.component.html',
@@ -9,9 +9,9 @@ import { Stock } from '../stock';
 })
 export class DisplayPageComponent implements OnInit 
 {
-  constructor(private service:StockService) { }
-
   stocks:any = [];
+
+  constructor(private service:StockService) { }
 
   ngOnInit() 
   {
