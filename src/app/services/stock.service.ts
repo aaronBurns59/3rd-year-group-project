@@ -16,6 +16,6 @@ export class StockService
   //of the collection store
   getStockData():Observable<any>
   {
-    return this.http.get("http://localhost:8081/api/stock");
+    return this.http.get("http://localhost:8080/api/stock");
   }//getStock
 }//StockService
