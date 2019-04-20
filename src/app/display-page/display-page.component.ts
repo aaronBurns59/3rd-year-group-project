@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StockService } from '../services/stock.service';
 import { Observable } from 'rxjs';
 import { Stock } from '../stock';
-import { RouterModule, Routes } from '@angular/router';
+
 
 @Component({
   selector: 'app-display-page',

@@ -6,8 +6,8 @@ var bodyParser = require('body-parser');
 
 //Code to Access the mongoose database
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://admin:admin1@ds149138.mlab.com:49138/store'
-mongoose.connect(mongoDB, { useNewUrlParser: true });
+var mongoDB = 'mongodb://admin:admin1@ds149138.mlab.com:49138/store';
+mongoose.connect(mongoDB, { useNewUrlParser:true });
 
 var Schema = mongoose.Schema;
 //A schema used for handling data with the stock model
@@ -36,8 +36,10 @@ app.use(function(req,res,next)
     next();
 });
 
+//A Post Function 
+
 //Read function that gets documents from the store DB => stock collection 
-app.get('/', function(req, res)
+app.get('/api/store', function(req, res)
 {
     StockModel.find(function(err, stock)
     {
