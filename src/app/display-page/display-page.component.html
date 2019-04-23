@@ -1,5 +1,13 @@
-<h1>Display Page accessable</h1>
-  <ul>
-    <li *ngFor="let s of stocks">     
-       <p>{{s.price}}</p>
-  </ul> 
+<mat-toolbar color="primary">Reading Data</mat-toolbar>
+<mat-accordion multi="true" *ngIf="stocks.length > 0">
+  <!--Outputs the data retrieved from the db and outputs until it reaches the end of the document-->
+  <mat-expansion-panel [expanded]="false" *ngFor="let s of stocks">
+    <p>Price: {{ s.price }}</p>
+    <p>Size: {{ s.size }}</p>
+    <p>Colour: {{ s.colour }}</p>
+    <p>Brand: {{ s.brand }}</p>
+    <p>Material: {{ s.material }}</p>
+  </mat-expansion-panel>
+</mat-accordion>
+<!--Condition for when the db is empty-->
+<p class="info-text mat-body-1" *ngIf="stocks.length <= 0">No Items added yet!</p> 

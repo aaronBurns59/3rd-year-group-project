@@ -18,4 +18,14 @@ export class StockService
   {
     return this.http.get("http://localhost:8081/api/store");
   }//getStock
+
+  //Array for holding new stocks that are created
+  private stocks: Stock[] = [];
+
+  //Add stock to the DB
+  addStockData(price:number, size:number, colour:string, brand:string, material:string):Observable<any>
+  {
+    const stock : Stock = {price:price, size:size, colour:colour, brand:brand, material:material};
+    return this.http.post("http://localhost:8081/api/store", stock);
+  }
 }//StockService

@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">Adding Data</mat-toolbar>
+<mat-card>
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+    <mat-form-field>
+      
+      <input placeholder="price" matInput type="text" name="price" ngModel required #price="ngModel">
+      <mat-error *ngIf="price.invalid">Item Price</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input placeholder="size" matInput type="text" name="size" ngModel required #size="ngModel">
+      <mat-error *ngIf="size.invalid">Item Size</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input placeholder="colour" matInput type="text" name="colour" ngModel required  #colour="ngModel">
+      <mat-error *ngIf="colour.invalid">Item Colour</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input placeholder="brand" matInput type="text" name="brand" ngModel required #brand="ngModel">
+      <mat-error *ngIf="brand.invalid">Item Brand</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input placeholder="material" matInput type="text" name="material" ngModel required #material="ngModel">
+      <mat-error *ngIf="material.invalid">Item Material</mat-error>
+    </mat-form-field>
+
+    <button mat-icon-button><i class="material-icons">save</i></button>
+  </form>
+</mat-card>

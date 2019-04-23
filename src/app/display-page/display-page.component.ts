@@ -15,12 +15,10 @@ export class DisplayPageComponent implements OnInit
 
   constructor(private service:StockService) { }
 
-  ngOnInit() 
-  {
-    this.service.getStockData().subscribe(data => 
-      {
-        this.stocks = data;
-       });
+  ngOnInit()
+  {  
+        this.service.getStockData().subscribe(data => {
+        this.stocks = data;});
   }
 
 }
