@@ -1,6 +1,5 @@
 <h1>Display Page accessable</h1>
-
-  <a *ngFor="let s of stocks">
-  <p>Price: {{s.price}}</p>
-  </a>
-  
+  <ul>
+    <li *ngFor="let s of stocks">     
+       <p>{{s.price}}</p>
+  </ul> 

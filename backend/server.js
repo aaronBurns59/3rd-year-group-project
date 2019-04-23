@@ -36,8 +36,6 @@ app.use(function(req,res,next)
     next();
 });
 
-//A Post Function 
-
 //Read function that gets documents from the store DB => stock collection 
 app.get('/api/store', function(req, res)
 {
@@ -48,7 +46,7 @@ app.get('/api/store', function(req, res)
 })
 
 //Server connection code
-var server = app.listen(8080, function()
+var server = app.listen(8081, function()
 {
     var host = server.address().address
     var port = server.address().port

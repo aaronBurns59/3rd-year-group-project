@@ -5,8 +5,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { DisplayPageComponent } from './display-page/display-page.component';
 import { StockService } from './services/stock.service';
-//use this component to do all routing seperate of the app.module.ts
+import { MatInputModule,
+  MatMenuModule,
+  MatCardModule,
+  MatButtonModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatExpansionModule,
+  MatSelectModule} from '@angular/material';
 
+//use this component to do all routing seperate of the app.module.ts
 const routes: Routes = [
   {path: 'display', component: DisplayPageComponent}
 ];
@@ -20,7 +28,16 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule,
+    MatSelectModule,
+    MatCardModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatExpansionModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [StockService],
   bootstrap: [AppComponent]
