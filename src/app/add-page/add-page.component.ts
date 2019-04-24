@@ -14,7 +14,7 @@ export class AddPageComponent implements OnInit {
   onAddStock(form: NgForm)
    {
     //an instance variable of service which calls one of its methods
-    this.service.addStockData(form.value.description, form.value.price, form.value.size, form.value.colour, form.value.brand, form.value.material).subscribe();
+    this.service.addStockData(form.value.description, form.value.price, form.value.brand, form.value.condition, form.value.seller, form.value.contactInfo).subscribe();
     //logs the values to the console from the form not to the console of the client
     console.log(form.value);
     //resets the values of the form the data is gotten form

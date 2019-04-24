@@ -12,23 +12,23 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input placeholder="size" matInput type="text" name="size" ngModel required #size="ngModel">
-      <mat-error *ngIf="size.invalid">Item Size</mat-error>
-    </mat-form-field>
-
-    <mat-form-field>
-      <input placeholder="colour" matInput type="text" name="colour" ngModel required  #colour="ngModel">
-      <mat-error *ngIf="colour.invalid">Item Colour</mat-error>
-    </mat-form-field>
-
-    <mat-form-field>
       <input placeholder="brand" matInput type="text" name="brand" ngModel required #brand="ngModel">
       <mat-error *ngIf="brand.invalid">Item Brand</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input placeholder="material" matInput type="text" name="material" ngModel required #material="ngModel">
-      <mat-error *ngIf="material.invalid">Item Material</mat-error>
+      <input placeholder="condition" matInput type="text" name="condition" ngModel required  #condition="ngModel">
+      <mat-error *ngIf="condition.invalid">Item Condition</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input placeholder="seller" matInput type="text" name="seller" ngModel required #seller="ngModel">
+      <mat-error *ngIf="seller.invalid">Item Seller</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input placeholder="contactInfo" matInput type="text" name="contactInfo" ngModel required #contactInfo="ngModel">
+      <mat-error *ngIf="contactInfo.invalid">Item Contact Info</mat-error>
     </mat-form-field>
 
     <button mat-icon-button ><i class="material-icons">save</i></button>

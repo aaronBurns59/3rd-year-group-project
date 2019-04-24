@@ -14,10 +14,10 @@ var stockSchema = new Schema
 ({
     description:String,
     price:Number,
-    size:String,
-    colour:String,
     brand:String,
-    material:String
+    condition:String,
+    seller:String,
+    contactInfo:String
 });//stockSchema
 
 //Initializing the vars that will create the data for the DB passing
@@ -42,19 +42,19 @@ app.post('/api/store', function(req, res)
 {
     console.log(req.body.description);
     console.log(req.body.price);
-    console.log(req.body.size);
-    console.log(req.body.colour);
     console.log(req.body.brand);
-    console.log(req.body.material);
+    console.log(req.body.condition);
+    console.log(req.body.seller);
+    console.log(req.body.contactInfo);
     
     StockModel.create(
     {
         description:req.body.description,
         price:req.body.price,
-        size:req.body.size,
-        colour:req.body.colour,
         brand:req.body.brand,
-        material:req.body.material
+        condition:req.body.condition,
+        seller:req.body.seller,
+        contactInfo:req.body.contactInfo
     });  
     res.send("Stock added To DB")  
 })

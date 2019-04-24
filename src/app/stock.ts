@@ -2,10 +2,10 @@ export interface Stock
 {
     description:String;
     price:number;
-    size:String;
-    colour:String;
     brand:String;
-    material:String;
+    condition:String;
+    seller:String;
+    contactInfo:String;
 }//stock
 
 
