@@ -3,7 +3,6 @@ import { StockService } from '../services/stock.service';
 import { Observable } from 'rxjs';
 import { Stock } from '../stock';
 
-
 @Component({
   selector: 'app-display-page',
   templateUrl: './display-page.component.html',
@@ -17,8 +16,10 @@ export class DisplayPageComponent implements OnInit
 
   ngOnInit()
   {  
-        this.service.getStockData().subscribe(data => {
-        this.stocks = data;});
+      this.service.getStockData().subscribe(data => 
+      {
+        this.stocks = data;
+      });
   }
 
 }

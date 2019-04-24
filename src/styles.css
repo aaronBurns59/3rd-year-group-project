@@ -1,3 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+body
+{
+    background-image: url("assets/images/clothesBackground.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}

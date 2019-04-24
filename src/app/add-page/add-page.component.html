@@ -1,8 +1,12 @@
 <mat-toolbar color="primary">Adding Data</mat-toolbar>
-<mat-card>
+<mat-card class="inputDesign">
   <form (submit)="onAddStock(postForm)" #postForm="ngForm">
-    <mat-form-field>
-      
+    <mat-form-field>  
+        <input placeholder="description" matInput type="text" name="description" ngModel required #description="ngModel">
+        <mat-error *ngIf="description.invalid">Item Description</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>  
       <input placeholder="price" matInput type="text" name="price" ngModel required #price="ngModel">
       <mat-error *ngIf="price.invalid">Item Price</mat-error>
     </mat-form-field>
@@ -27,6 +31,6 @@
       <mat-error *ngIf="material.invalid">Item Material</mat-error>
     </mat-form-field>
 
-    <button mat-icon-button><i class="material-icons">save</i></button>
+    <button mat-icon-button ><i class="material-icons">save</i></button>
   </form>
 </mat-card>

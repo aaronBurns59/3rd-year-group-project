@@ -1,7 +1,8 @@
 <mat-toolbar color="primary">Reading Data</mat-toolbar>
 <mat-accordion multi="true" *ngIf="stocks.length > 0">
   <!--Outputs the data retrieved from the db and outputs until it reaches the end of the document-->
-  <mat-expansion-panel [expanded]="false" *ngFor="let s of stocks">
+  <mat-expansion-panel [expanded]="false" *ngFor="let s of stocks" class="item-list">
+  <mat-expansion-panel-header> Description: {{s.description}} </mat-expansion-panel-header>
     <p>Price: {{ s.price }}</p>
     <p>Size: {{ s.size }}</p>
     <p>Colour: {{ s.colour }}</p>

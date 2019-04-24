@@ -12,6 +12,7 @@ var Schema = mongoose.Schema;
 //a schema used for working with the data in the json database
 var stockSchema = new Schema
 ({
+    description:String,
     price:Number,
     size:String,
     colour:String,
@@ -39,6 +40,7 @@ app.use(function(req, res, next)
 //writes a new entry into the database for the posts model
 app.post('/api/store', function(req, res)
 {
+    console.log(req.body.description);
     console.log(req.body.price);
     console.log(req.body.size);
     console.log(req.body.colour);
@@ -47,6 +49,7 @@ app.post('/api/store', function(req, res)
     
     StockModel.create(
     {
+        description:req.body.description,
         price:req.body.price,
         size:req.body.size,
         colour:req.body.colour,
@@ -64,7 +67,6 @@ app.get('/api/store', function(req, res)
         res.json(stock);
     });
 })
-
 
 //connects the server to the port localhost:8081
 var server = app.listen(8080, function ()

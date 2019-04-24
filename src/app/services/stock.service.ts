@@ -23,9 +23,9 @@ export class StockService
   private stocks: Stock[] = [];
 
   //Add stock to the DB
-  addStockData(price:number, size:String, colour:string, brand:string, material:string):Observable<any>
+  addStockData(description:String, price:number, size:String, colour:String, brand:String, material:String):Observable<any>
   {
-    const stock : Stock = {price:price, size:size, colour:colour, brand:brand, material:material};
+    const stock : Stock = {description:description, price:price, size:size, colour:colour, brand:brand, material:material};
     return this.http.post("http://localhost:8080/api/store", stock);
 
   }

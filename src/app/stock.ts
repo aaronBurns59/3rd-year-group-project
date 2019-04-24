@@ -1,8 +1,9 @@
 export interface Stock
 {
+    description:String;
     price:number;
     size:String;
-    colour:string;
-    brand:string;
-    material:string;
+    colour:String;
+    brand:String;
+    material:String;
 }//stock
