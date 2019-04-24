@@ -7,3 +7,5 @@ export interface Stock
     brand:String;
     material:String;
 }//stock
+
+

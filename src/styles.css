@@ -10,3 +10,8 @@ body
     background-position: center;
     background-size: cover;
 }
+
+.topPanel
+{
+    background-color: blueviolet;
+}

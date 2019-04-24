@@ -27,6 +27,5 @@ export class StockService
   {
     const stock : Stock = {description:description, price:price, size:size, colour:colour, brand:brand, material:material};
     return this.http.post("http://localhost:8080/api/store", stock);
-
   }
 }//StockService
