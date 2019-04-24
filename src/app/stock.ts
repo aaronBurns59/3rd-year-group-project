@@ -1,7 +1,7 @@
 export interface Stock
 {
     price:number;
-    size:number;
+    size:String;
     colour:string;
     brand:string;
     material:string;

@@ -1,42 +1,62 @@
-//Server communication variables
 var express = require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 
-//Code to Access the mongoose database
+//allows us to access the mlab mongo database 
 var mongoose = require('mongoose');
 var mongoDB = 'mongodb://admin:admin1@ds149138.mlab.com:49138/store';
-mongoose.connect(mongoDB, { useNewUrlParser:true });
+mongoose.connect(mongoDB, { useNewUrlParser: true } );
 
 var Schema = mongoose.Schema;
-//A schema used for handling data with the stock model
+//a schema used for working with the data in the json database
 var stockSchema = new Schema
 ({
     price:Number,
-    size:Number,
+    size:String,
     colour:String,
     brand:String,
     material:String
 });//stockSchema
 
-//The StockModel uses the collection in the DB and the schema created above
+//Initializing the vars that will create the data for the DB passing
+//the respective schema and the appropriate collection
 var StockModel = mongoose.model('stock', stockSchema);
 
-//configuring express to use body-parser as middle-ware. 
+//Here we are configuring express to use body-parser as middle-ware. 
 app.use(bodyParser.urlencoded({ extended: false })); 
 app.use(bodyParser.json());
 
-//sets what http methods the user is allowed to access
-app.use(function(req, res, next) {
+//allows the use of different http methods
+app.use(function(req, res, next) 
+{
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS");
-    res.header("Access-Control-Allow-Headers", 
-    "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
-});
+    });
 
-//Read function that gets documents from the store DB => stock collection 
+//writes a new entry into the database for the posts model
+app.post('/api/store', function(req, res)
+{
+    console.log(req.body.price);
+    console.log(req.body.size);
+    console.log(req.body.colour);
+    console.log(req.body.brand);
+    console.log(req.body.material);
+    
+    StockModel.create(
+    {
+        price:req.body.price,
+        size:req.body.size,
+        colour:req.body.colour,
+        brand:req.body.brand,
+        material:req.body.material
+    });  
+    res.send("Stock added To DB")  
+})
+
+//gets the post from the mlab database
 app.get('/api/store', function(req, res)
 {
     StockModel.find(function(err, stock)
@@ -45,29 +65,13 @@ app.get('/api/store', function(req, res)
     });
 })
 
-app.post('api/store', function(req, res){
-    console.log(req.body.price);
-    console.log(req.body.size);
-    console.log(req.body.colour);
-    console.log(req.body.brand);
-    console.log(req.body.material);
 
-    StockModel.create({
-        price:req.body.price,
-        price:req.body.size,
-        price:req.body.colour,
-        price:req.body.brand,
-        price:req.body.material
-    });
-
-    res.send("Stock added To DB")
+//connects the server to the port localhost:8081
+var server = app.listen(8080, function ()
+ {
+   var host = server.address().address
+   var port = server.address().port 
+   console.log("Listening at http://%s:%s", host, port)
 })
 
-//Server connection code
-var server = app.listen(8081, function () 
-{
-    var host = server.address().address
-    var port = server.address().port
-    
-    console.log("Listening at http://%s:%s", host, port)
- })
+

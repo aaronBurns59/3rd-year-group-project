@@ -11,14 +11,14 @@ export class AddPageComponent implements OnInit {
 
   constructor(private service: StockService) { }
   
-  onAddPost(form: NgForm)
+  onAddStock(form: NgForm)
    {
     //an instance variable of service which calls one of its methods
     this.service.addStockData(form.value.price, form.value.size, form.value.colour, form.value.brand, form.value.material).subscribe();
     //logs the values to the console from the form not to the console of the client
     console.log(form.value);
     //resets the values of the form the data is gotten form
-    form.resetForm();
+    //form.resetForm();
   }
 
   ngOnInit(){}
