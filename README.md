@@ -68,3 +68,30 @@ The five stages involved in this Methodology and how we practiced them are:
 + https://karma-runner.github.io
 + http://www.protractortest.org/
 + https://github.com/angular/angular-cli/blob/master/README.md
+
+#How the App Works
+
+## Server
+
+The server we used for this app is a node server that asynchronously communicates with a server on mlab. The server in question is a mongoose server meaning it is document based. Express is used to communicate between our local node server and the server on mlab. In order to read data from the correct database on mlab we needed to create a user which we called admin, with this user we can access the documents inside our *store* database. After we have set up the *Node* and *Expresss* the server operational and it can communicate with the hosted server on mlab. 
+
+After the Node is set up, we declared a schema using the mongoose inbuilt functionality to create an schema of our *model* that we created to match the data format we wanted for the site. This schema called "StockSchema" is used to order all the data that is handled by the node server. After the schema has been created we create "StockModel" with it passing in the model type and the schema that is to be used. This is so that all data read in from the app and sent to the server is consistent.
+
+The Node server has all the functions needed for *Create, Read, Update, Delete* (CRUD) functionality. This is done in the node using http get, post, delete and put methods. The Http method permissions are declared in the node as well. Any function which alters the mlab db has the data it reads or writes printed to the console so that it can be checked to see if it is correct. Delete and Update functionality requires its own separate read function because it order to read and update data in an mlab db you also need the automatically generated *id* that is given to each entry. The delete and update functions can find data in the db using that id, updating has a special funciton called *findByIdAndUpdate()* specifcally design to be used in this manner.
+
+## Service
+
+The service is imported into every component of the app because it calls all of the functionality that is in the node server. The service acts as a provider for the whole app. It takes the functionality of each component and stores it in one easily accessible place. The service does all data binding.  It subscribes to data that is read in from the mlab server and assigns new data to arrays that are then written to the mlab server.
+
+## Add-Page
+
+This page uses angular forms to read in the users input and bind it to array in the service. Using forms you can set it to an type of (submit) this means that you don't need a (Click) function inside the button to accept the data the user has entered. The button is contained inside the form tags which accepts that when the button is clicked that is the (submit) event.
+This component has only one method and that relates directly to the form. It calls the AddStockData function in the server which in turn calls the add function in the node server.
+
+## Display-Page
+
+This page displays the data in the mlab DB. It does this asynchronously meaning that it you delete a document in the mlab DB it will automatically be deleted from the web page on a refresh and the same will have vice versa, if you delete an entry on the webpage and refresh the mlab DB, that entry will be gone. This page is where the user can update and delete. Both need to go all the way up to the mlab server to get the id of each entry. This is all done in the usual manner, component calls service calls node which gets from mlab server.
+
+## Update-Page
+
+This page is almost identical to the write page in terms of structure but how it operates is very different. This page can be accesses through the display-page and needs to be passed an entry that is already present in that page. To read that entry and update it to the mlab DB, it needs that entries unique id. A new read method is needed for this because the standard read method does not read the id. With the id you can read all the json data attached to it which is what the updated function in the server does. It just needs to be passed a *Model* to read it into.
