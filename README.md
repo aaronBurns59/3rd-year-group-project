@@ -73,18 +73,18 @@ The Node server has all the functions needed for *Create, Read, Update, Delete* 
 The service is imported into every component of the app because it calls all of the functionality that is in the node server. The service acts as a provider for the whole app. It takes the functionality of each component and stores it in one easily accessible place. The service does all data binding.  It subscribes to data that is read in from the mlab server and assigns new data to arrays that are then written to the mlab server.
 
 
-## Add-Page
+## Add Page
 
 This page uses angular forms to read in the users input and bind it to array in the service. Using forms you can set it to an type of (submit) this means that you don't need a (Click) function inside the button to accept the data the user has entered. The button is contained inside the form tags which accepts that when the button is clicked that is the (submit) event.
 This component has only one method and that relates directly to the form. It calls the AddStockData function in the server which in turn calls the add function in the node server.
 
 
-## Display-Page
+## Display Page
 
 This page displays the data in the mlab DB. It does this asynchronously meaning that it you delete a document in the mlab DB it will automatically be deleted from the web page on a refresh and the same will have vice versa, if you delete an entry on the webpage and refresh the mlab DB, that entry will be gone. This page is where the user can update and delete. Both need to go all the way up to the mlab server to get the id of each entry. This is all done in the usual manner, component calls service calls node which gets from mlab server.
 
 
-## Update-Page
+## Update Page
 
 This page is almost identical to the write page in terms of structure but how it operates is very different. This page can be accesses through the display-page and needs to be passed an entry that is already present in that page. To read that entry and update it to the mlab DB, it needs that entries unique id. A new read method is needed for this because the standard read method does not read the id. With the id you can read all the json data attached to it which is what the updated function in the server does. It just needs to be passed a *Model* to read it into.
 
