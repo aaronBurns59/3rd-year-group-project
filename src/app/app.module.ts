@@ -17,7 +17,8 @@ import { AddPageComponent } from './add-page/add-page.component';
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UpdatePageComponent } from './update-page/update-page.component';
-//use this component to do all routing seperate of the app.module.ts
+
+// route paths needed to move between pages
 const routes: Routes = [
   {path: 'display', component: DisplayPageComponent},
   {path: 'add', component: AddPageComponent},

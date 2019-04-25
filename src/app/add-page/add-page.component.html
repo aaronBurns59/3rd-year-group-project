@@ -1,4 +1,3 @@
-
 <mat-toolbar color="primary">Adding Data</mat-toolbar>
 <mat-card class="inputDesign">
   <form (submit)="onAddStock(stockForm)" #stockForm="ngForm">
@@ -6,32 +5,26 @@
         <input placeholder="Description" matInput type="text" name="description" ngModel required #description="ngModel">
         <mat-error *ngIf="description.invalid">Item Description</mat-error>
     </mat-form-field>
-
     <mat-form-field>  
       <input placeholder="Price" matInput type="text" name="price" ngModel required #price="ngModel">
       <mat-error *ngIf="price.invalid">Item Price</mat-error>
     </mat-form-field>
-
     <mat-form-field>
       <input placeholder="Brand" matInput type="text" name="brand" ngModel required #brand="ngModel">
       <mat-error *ngIf="brand.invalid">Item Brand</mat-error>
     </mat-form-field>
-
     <mat-form-field>
       <input placeholder="Condition" matInput type="text" name="condition" ngModel required  #condition="ngModel">
       <mat-error *ngIf="condition.invalid">Item Condition</mat-error>
     </mat-form-field>
-
     <mat-form-field>
       <input placeholder="Seller" matInput type="text" name="seller" ngModel required #seller="ngModel">
       <mat-error *ngIf="seller.invalid">Item Seller</mat-error>
     </mat-form-field>
-
     <mat-form-field>
       <input placeholder="Contact Info" matInput type="text" name="contactInfo" ngModel required #contactInfo="ngModel">
       <mat-error *ngIf="contactInfo.invalid">Item Contact Info</mat-error>
     </mat-form-field>
-
     <button mat-icon-button><i class="material-icons">save</i></button>
   </form>
 </mat-card>

@@ -6,6 +6,6 @@ export interface Stock
     condition:String;
     seller:String;
     contactInfo:String;
-}//stock
+}// stock
 
 

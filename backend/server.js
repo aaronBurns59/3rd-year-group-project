@@ -1,7 +1,8 @@
-// variables needed to operate the server
+// Express is used for communication between the node server and the mongodb server
 var express = require('express');
+//the "app" is used to call all the http methods need to get/post to and from the mongo database (mLab)
 var app = express();
-var path = require('path');
+// Parser used for serializing/deserializing json data
 var bodyParser = require('body-parser');
 
 // need to declare and connect the mongoDB in the app
@@ -116,7 +117,6 @@ app.delete('/api/store/:id', function(req, res)
         res.send(data);
     });
 });
-
 
 //connects the server to the port localhost:8081
 var server = app.listen(8080, function ()
