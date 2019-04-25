@@ -10,7 +10,7 @@ var mongoose = require('mongoose');
 var mongoDB = 'mongodb://admin:admin1@ds149138.mlab.com:49138/store';
 mongoose.connect(mongoDB, { useNewUrlParser: true } );
 
-// a schema used for realating data in the model to the data in the DB
+// a schema used for relating data in the model to the data in the DB
 // this is used in both read and write functions
 var Schema = mongoose.Schema;
 var stockSchema = new Schema
@@ -80,7 +80,7 @@ app.get('/api/store', function(req, res)
 app.get('/api/store/:id', function(req, res)
 {
     console.log("Read doc with id"+ req.params.id);
-    // finding the data in the db using the model
+    // Finds the data in the DB by searching using the id
     StockModel.findById(req.params.id, function(err, data)
     {
         res.json(data);

@@ -7,5 +7,3 @@ export interface Stock
     seller:String;
     contactInfo:String;
 }// stock
-
-
