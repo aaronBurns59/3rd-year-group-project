@@ -9,7 +9,7 @@ Authors:
 "This module is intended to bring together many of the best practices that the student has learned in theprevious semesters. It give the student an opportunity to design, develop and deploy a project, eitherindividually or in a group environment, delivering a piece of software in a timely and standards driven manner."
 
 
-## How to Run the project
+## How to Run the Project
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0
 
 + Development Server
