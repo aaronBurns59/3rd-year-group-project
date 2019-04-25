@@ -1,15 +1,15 @@
-#Professional Practice in IT
+# Professional Practice in IT
 
 Authors:
 + Aaron Burns (G00346688)
 + Matthew Durand (G00346987)
 
 
-##Module Description
+## Module Description
 "This module is intended to bring together many of the best practices that the student has learned in theprevious semesters. It give the student an opportunity to design, develop and deploy a project, eitherindividually or in a group environment, delivering a piece of software in a timely and standards driven manner."
 
 
-##How to Run the project
+## How to Run the project
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0
 
 + Development Server
@@ -28,11 +28,11 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 
-##Introduction
+## Introduction
 Our Project is an Angular based online clothes shop website. Our goal was to create a website with which users could browse a selection of items of clothing on sale from various sellers. Products include a Description, Price, Brand, Condition, Seller Name and Contact Info. The Project includes CRUD functionality, meaning users can Create, Update, Read and Delete the data stored on mLab.
 
 
-##Technologies Used
+## Technologies Used
 
 + Angular - A TypeScript based open-source web-application framework.
 
@@ -45,7 +45,7 @@ Our Project is an Angular based online clothes shop website. Our goal was to cre
 + mLab - A fully managed cloud database service that hosts MongoDB databases and runs on AWS Google and Azure cloud providers.
 
 
-##Design Methodology
+## Design Methodology
 
 We decided that the Waterfall Methodology would best suit our approach to working on the project. Each stage of the project would follow eachother sequentially downwards. When one stage was completed they were essentially set in stone and would remain unchanged until all other stages were complete. 
 The five stages involved in this Methodology and how we practiced them are:
@@ -56,7 +56,7 @@ The five stages involved in this Methodology and how we practiced them are:
 5. Maintenance - Going over implemented features to alter and update functionality 
 
 
-##References
+## References
 
 + https://developer.mozilla.org/en-US/docs/Web/JavaScript
 + https://angular.io/docs
