@@ -3,10 +3,12 @@
     background-color: blueviolet
 }
 
-
 .item-list
 {
     opacity:  0.9;
-    background-color: blueviolet;
-    color: aliceblue;
+
+}
+p
+{
+    font-size: 20px;
 }

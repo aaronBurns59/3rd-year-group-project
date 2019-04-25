@@ -2,13 +2,17 @@
 <mat-accordion multi="true" *ngIf="stocks.length > 0">
   <!--Outputs the data retrieved from the db and outputs until it reaches the end of the document-->
   <mat-expansion-panel [expanded]="false" *ngFor="let s of stocks" class="item-list">
-  <mat-expansion-panel-header> Description: {{s.description}} </mat-expansion-panel-header>
+  <mat-expansion-panel-header><p> Description: {{s.description}}</p></mat-expansion-panel-header>
     <p>Price: {{ s.price }}</p>
-    <p>Size: {{ s.brand }}</p>
-    <p>Colour: {{ s.condition }}</p>
-    <p>Brand: {{ s.seller }}</p>
-    <p>Material: {{ s.contactInfo }}</p>
+    <p>Brand: {{ s.brand }}</p>
+    <p>Condition: {{ s.condition }}</p>
+    <p>Seller: {{ s.seller }}</p>
+    <p>Contact Information: {{ s.contactInfo }}</p>
+    <mat-action-row>
+      <button mat-icon-button [routerLink]="['/update', s._id]"><i class="material-icons">update</i></button>
+    </mat-action-row>
   </mat-expansion-panel>
+
 </mat-accordion>
 <!--Condition for when the db is empty-->
 <p class="info-text mat-body-1" *ngIf="stocks.length <= 0">No Items added yet!</p> 

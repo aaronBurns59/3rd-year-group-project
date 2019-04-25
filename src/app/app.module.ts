@@ -21,7 +21,7 @@ import { UpdatePageComponent } from './update-page/update-page.component';
 const routes: Routes = [
   {path: 'display', component: DisplayPageComponent},
   {path: 'add', component: AddPageComponent},
-  {path: 'update', component: UpdatePageComponent}
+  {path: 'update/:id', component: UpdatePageComponent}
 ];
 
 @NgModule({

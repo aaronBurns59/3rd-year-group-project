@@ -26,4 +26,17 @@ export class StockService
     const stock : Stock = {description:description, price:price, brand:brand, condition:condition, seller:seller, contactInfo:contactInfo};
     return this.http.post("http://localhost:8080/api/store", stock);
   }
+
+  // update method called in the update component
+  updateStock(id:string, description:String, price:number, brand:String, condition:String, seller:String, contactInfo:String): Observable<any> 
+  {
+    const stock: Stock = {description:description, price:price, brand:brand, condition:condition, seller:seller, contactInfo:contactInfo};
+    return this.http.put("http://localhost:8080/api/store/" + id, stock);
+  }
+
+  // get method used to accommodate the id string need you need for updating
+  getUpdateData(id: String): Observable<any>
+  {
+      return this.http.get("http://localhost:8080/api/store/" + id);
+  }
 }// StockService

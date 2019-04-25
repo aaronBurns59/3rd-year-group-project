@@ -77,6 +77,33 @@ app.get('/api/store', function(req, res)
     });
 })
 
+// Need to find the id of the post you want to update
+// before you can actually update it
+app.get('/api/store/:id', function(req, res){
+    console.log("Read doc with id"+ req.params.id);
+    //finding the data in the db using the model
+    StockModel.findById(req.params.id, function(err, data)
+    {
+        res.json(data);
+    });
+})
+
+// this function is used to update information that is already in the DB
+app.put('/api/store/:id', function(req, res)
+{
+    console.log("Update called on"+req.params.id);
+    console.log(req.body.description);
+    console.log(req.body.price);
+    console.log(req.body.brand);
+    console.log(req.body.condition);
+    console.log(req.body.seller);
+    console.log(req.body.contactInfo);
+    StockModel.findByIdAndUpdate(req.params.id, req.body, function(err, data)
+    {
+        res.send(data);
+    })
+})
+
 //connects the server to the port localhost:8081
 var server = app.listen(8080, function ()
  {

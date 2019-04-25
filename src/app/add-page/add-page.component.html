@@ -1,6 +1,7 @@
+
 <mat-toolbar color="primary">Adding Data</mat-toolbar>
 <mat-card class="inputDesign">
-  <form (submit)="onAddStock(postForm)" #postForm="ngForm">
+  <form (submit)="onAddStock(stockForm)" #stockForm="ngForm">
     <mat-form-field>  
         <input placeholder="Description" matInput type="text" name="description" ngModel required #description="ngModel">
         <mat-error *ngIf="description.invalid">Item Description</mat-error>
