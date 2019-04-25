@@ -20,6 +20,16 @@ export class DisplayPageComponent implements OnInit
       {
         this.stocks = data;
       });
-  }
+  }// ngOnInit
 
-}
+  onDelete(id:string)//
+  {
+    // returns a message giving the id of the item that was deleted
+    console.log("Item with id: " + id + " deleted");
+    this.service.deleteStock(id).subscribe(()=>
+    {
+      this.ngOnInit();
+    });
+  }// onDelete
+
+}// DisplayPageComponent

@@ -51,7 +51,6 @@ app.post('/api/store', function(req, res)
     console.log(req.body.condition);
     console.log(req.body.seller);
     console.log(req.body.contactInfo);
-
     // actually builds the data tht is added to the db
     StockModel.create(
     {
@@ -69,7 +68,6 @@ app.post('/api/store', function(req, res)
 // this get function is used to read all data in the DB to the display component
 app.get('/api/store', function(req, res)
 {
-    
     StockModel.find(function(err, stock)
     {
         // res is the response from the server
@@ -78,10 +76,10 @@ app.get('/api/store', function(req, res)
 })
 
 // Need to find the id of the post you want to update
-// before you can actually update it
-app.get('/api/store/:id', function(req, res){
+app.get('/api/store/:id', function(req, res)
+{
     console.log("Read doc with id"+ req.params.id);
-    //finding the data in the db using the model
+    // finding the data in the db using the model
     StockModel.findById(req.params.id, function(err, data)
     {
         res.json(data);
@@ -91,7 +89,7 @@ app.get('/api/store/:id', function(req, res){
 // this function is used to update information that is already in the DB
 app.put('/api/store/:id', function(req, res)
 {
-    console.log("Update called on"+req.params.id);
+    console.log("Update called on: " + req.params.id);
     console.log(req.body.description);
     console.log(req.body.price);
     console.log(req.body.brand);
@@ -104,6 +102,22 @@ app.put('/api/store/:id', function(req, res)
     })
 })
 
+// deletes data in the mongodb, it finds the items by their given id
+app.delete('/api/store/:id', function(req, res)
+{
+    console.log("Delete called on: " + req.params.id);
+    StockModel.deleteOne({_id:req.params.id}, function(err, data)
+    {
+        //catches any error
+        if(err)
+        {
+            res.send(err)
+        }// if
+        res.send(data);
+    });
+});
+
+
 //connects the server to the port localhost:8081
 var server = app.listen(8080, function ()
  {
@@ -112,5 +126,3 @@ var server = app.listen(8080, function ()
    // tells the user that the client is running
    console.log("Listening at http://%s:%s", host, port)
 })
-
-

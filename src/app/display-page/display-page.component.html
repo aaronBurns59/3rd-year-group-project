@@ -10,6 +10,7 @@
     <p>Contact Information: {{ s.contactInfo }}</p>
     <mat-action-row>
       <button mat-icon-button [routerLink]="['/update', s._id]"><i class="material-icons">update</i></button>
+      <button mat-icon-button  (click)="onDelete(s._id)"><i class="material-icons">delete</i></button>
     </mat-action-row>
   </mat-expansion-panel>
 
