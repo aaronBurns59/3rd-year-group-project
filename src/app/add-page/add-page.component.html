@@ -2,35 +2,35 @@
 <mat-card class="inputDesign">
   <form (submit)="onAddStock(postForm)" #postForm="ngForm">
     <mat-form-field>  
-        <input placeholder="description" matInput type="text" name="description" ngModel required #description="ngModel">
+        <input placeholder="Description" matInput type="text" name="description" ngModel required #description="ngModel">
         <mat-error *ngIf="description.invalid">Item Description</mat-error>
     </mat-form-field>
 
     <mat-form-field>  
-      <input placeholder="price" matInput type="text" name="price" ngModel required #price="ngModel">
+      <input placeholder="Price" matInput type="text" name="price" ngModel required #price="ngModel">
       <mat-error *ngIf="price.invalid">Item Price</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input placeholder="brand" matInput type="text" name="brand" ngModel required #brand="ngModel">
+      <input placeholder="Brand" matInput type="text" name="brand" ngModel required #brand="ngModel">
       <mat-error *ngIf="brand.invalid">Item Brand</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input placeholder="condition" matInput type="text" name="condition" ngModel required  #condition="ngModel">
+      <input placeholder="Condition" matInput type="text" name="condition" ngModel required  #condition="ngModel">
       <mat-error *ngIf="condition.invalid">Item Condition</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input placeholder="seller" matInput type="text" name="seller" ngModel required #seller="ngModel">
+      <input placeholder="Seller" matInput type="text" name="seller" ngModel required #seller="ngModel">
       <mat-error *ngIf="seller.invalid">Item Seller</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input placeholder="contactInfo" matInput type="text" name="contactInfo" ngModel required #contactInfo="ngModel">
+      <input placeholder="Contact Info" matInput type="text" name="contactInfo" ngModel required #contactInfo="ngModel">
       <mat-error *ngIf="contactInfo.invalid">Item Contact Info</mat-error>
     </mat-form-field>
 
-    <button mat-icon-button ><i class="material-icons">save</i></button>
+    <button mat-icon-button><i class="material-icons">save</i></button>
   </form>
 </mat-card>

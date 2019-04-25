@@ -10,22 +10,20 @@ export class StockService
 {
   constructor(private http: HttpClient) {}
 
-  private stockList : Stock[] = [];
+  //MAY NEED THIS FOR UPDATE OR DELETE OR MAY NOT NEED
+  //array used for reading data out of it
+  //private stockList : Stock[] = [];
   
-  //goes to the DB on mlab, gets and return the url
-  //of the collection store
+  // gets all data that is stored in the node server that was read in from the mongoDB 
   getStockData():Observable<any>
   {
     return this.http.get("http://localhost:8080/api/store");
-  }//getStock
+  }// getStock
 
-  //Array for holding new stocks that are created
-  private stocks: Stock[] = [];
-
-  //Add stock to the DB
+  // Add stock to the DB
   addStockData(description:String, price:number, brand:String, condition:String, seller:String, contactInfo:String):Observable<any>
   {
     const stock : Stock = {description:description, price:price, brand:brand, condition:condition, seller:seller, contactInfo:contactInfo};
     return this.http.post("http://localhost:8080/api/store", stock);
   }
-}//StockService
+}// StockService

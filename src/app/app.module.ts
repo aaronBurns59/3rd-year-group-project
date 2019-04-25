@@ -16,18 +16,20 @@ import { MatInputModule,
 import { AddPageComponent } from './add-page/add-page.component';
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UpdatePageComponent } from './update-page/update-page.component';
 //use this component to do all routing seperate of the app.module.ts
 const routes: Routes = [
   {path: 'display', component: DisplayPageComponent},
-  {path: 'add', component: AddPageComponent}
+  {path: 'add', component: AddPageComponent},
+  {path: 'update', component: UpdatePageComponent}
 ];
-
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayPageComponent,
-    AddPageComponent
+    AddPageComponent,
+    UpdatePageComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
