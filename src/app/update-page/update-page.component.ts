@@ -13,7 +13,6 @@ export class UpdatePageComponent implements OnInit
   // need to hold data read in from db
   stock: any = [];
 
-  // routers params are needed or moving back to the diplay page I THINK
   constructor(private route:ActivatedRoute, private service:StockService, private router:Router){}
 
   ngOnInit()
@@ -24,12 +23,12 @@ export class UpdatePageComponent implements OnInit
     this.service.getUpdateData(this.route.snapshot.params['id']).subscribe(data => {this.stock=data;});
   }// ngOnInit
 
-  //calls the method in the post.service.ts that actually updates the data in the db and the client webpage
-  onUpdate(form: NgForm)
-  {
-    //have to subscribe due to the router vat being used
-    this.service.updateStock(this.stock._id, form.value.description, form.value.price, form.value.brand, form.value.condition, form.value.seller, form.value.contactInfo)
-    .subscribe(() =>{this.router.navigate(['/display']);});
-  }// onUpdate
+    //calls the method in the post.service.ts that actually updates the data in the db and the client webpage
+    onUpdate(form: NgForm)
+    {
+        //have to subscribe due to the router vat being used
+        this.service.updateStock(this.stock._id, form.value.description, form.value.price, form.value.brand, form.value.condition, form.value.seller, form.value.contactInfo)
+        .subscribe(() =>{this.router.navigate(['/display']);});
+  }
 
 }// UpdatePageComponent
