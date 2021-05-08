@@ -6,7 +6,7 @@ Authors:
 
 
 ## Module Description
-"This module is intended to bring together many of the best practices that the student has learned in theprevious semesters. It give the student an opportunity to design, develop and deploy a project, eitherindividually or in a group environment, delivering a piece of software in a timely and standards driven manner."
+"This module is intended to bring together many of the best practices that the student has learned in the previous semesters. It give the student an opportunity to design, develop and deploy a project, eitherindividually or in a group environment, delivering a piece of software in a timely and standards driven manner."
 
 
 ## How to Run the Project
